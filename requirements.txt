@@ -1,0 +1,13 @@
+# requirements.txt
+# A list of the Python packages this project needs.
+# Install them all at once with:
+#     pip install -r requirements.txt
+# (All of these are CPU-only. No GPU is required.)
+
+ultralytics        # the FastSAM AI model (this also installs PyTorch automatically)
+opencv-python      # OpenCV: read/show images, mouse-drawing window
+numpy              # fast math on arrays of numbers
+pandas             # read the Excel table
+matplotlib         # show charts and the final picture
+scipy              # smooth the curve and fill in points along it
+openpyxl           # lets pandas open .xlsx Excel files
