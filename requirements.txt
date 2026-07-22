@@ -10,4 +10,5 @@ numpy              # fast math on arrays of numbers
 pandas             # read the Excel table
 matplotlib         # show charts and the final picture
 scipy              # smooth the curve and fill in points along it
+scikit-image       # find the minimum-cost curved path in 02_draw_lines2.py
 openpyxl           # lets pandas open .xlsx Excel files

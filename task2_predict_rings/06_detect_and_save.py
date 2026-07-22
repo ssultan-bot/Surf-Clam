@@ -1,4 +1,4 @@
-F# 06_detect_and_save.py
+# 06_detect_and_save.py
 # ----------------------------------------------------------------------
 # STEP 6: Find the dark-band valleys (= growth rings), draw the result,
 #         and save the numbers to CSV files.
