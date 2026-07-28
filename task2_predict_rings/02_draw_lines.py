@@ -28,6 +28,40 @@ def bottom_edge_path(mask):
     return np.column_stack([xs.astype(float), ys])
 
 
+def centerline_path(mask, max_thickness_ratio=1.5, median_win=101):
+    """For each column, the midpoint of the growth band.
+
+    Naively bisecting the column's full top-to-bottom span breaks wherever
+    debris or a broken fragment is fused onto the shell in that column: the
+    mask is tall there for reasons that have nothing to do with the growth
+    band, so the true midpoint is nowhere near the band. Clipping the
+    thickness alone isn't enough either, because when material is fused
+    directly onto the ventral side, y_bot itself is contaminated (it's no
+    longer the shell's true edge) -- offsetting up from a wrong anchor just
+    gives a different wrong answer. So instead: flag any column whose raw
+    thickness balloons past the local (median-filtered) expectation as
+    unreliable, throw its midpoint away entirely, and bridge the gap by
+    interpolating between the nearest columns on either side that weren't
+    flagged -- the same "don't trust it, bridge across it" approach already
+    used for the near-root chip/break case."""
+    xs = np.where(mask.any(axis=0))[0]
+    y_top = np.empty(len(xs), dtype=float)
+    y_bot = np.empty(len(xs), dtype=float)
+    for i, x in enumerate(xs):
+        col = np.where(mask[:, x] > 0)[0]
+        y_top[i] = col.min()
+        y_bot[i] = col.max()
+    thickness = y_bot - y_top
+    baseline = ndi.median_filter(thickness, size=median_win, mode="nearest")
+    bad = thickness > baseline * max_thickness_ratio
+
+    mids = y_bot - thickness / 2.0
+    if bad.any() and not bad.all():
+        idx = np.arange(len(xs))
+        mids[bad] = np.interp(idx[bad], idx[~bad], mids[~bad])
+    return np.column_stack([xs.astype(float), mids])
+
+
 def despike(path, sigma=50, thresh=12.0, iters=6):
     n = len(path)
     y = path[:, 1].astype(float)
@@ -93,11 +127,11 @@ def relax_near_root(path, root_xy, gray, frac=0.10, extra_sigma=40, bulge_px=50)
     return out if root_first else out[::-1]
 
 
-def smooth(path, n=600, median_size=9, sigma=18):
+def smooth(path, n=600, median_size=9, sigma=90):
     x = ndi.median_filter(path[:, 0], size=median_size, mode="nearest")
     y = ndi.median_filter(path[:, 1], size=median_size, mode="nearest")
-    x = gaussian_filter1d(x, sigma=sigma)
-    y = gaussian_filter1d(y, sigma=sigma)
+    x = gaussian_filter1d(x, sigma=sigma, mode="nearest")
+    y = gaussian_filter1d(y, sigma=sigma, mode="nearest")
     pts = np.column_stack([x, y])
     keep = np.r_[True, np.any(np.abs(np.diff(pts, axis=0)) > 1e-6, axis=1)]
     pts = pts[keep]
@@ -147,6 +181,18 @@ def orient_root_first(path, root_xy):
     return path if d0 < d1 else path[::-1]
 
 
+def anchor_to_root(path, root_xy, tol=3.0):
+    """Make the line actually start at the clicked root, not just at whichever
+    traced point happens to be closest to it. Bridges the small gap left when
+    a chip/break near the hinge keeps the mask from reaching the exact root
+    pixel (see METHODS.md); path[0] is assumed root-nearest (orient_root_first
+    already called)."""
+    root_xy = np.asarray(root_xy, dtype=float)
+    if np.hypot(*(path[0] - root_xy)) <= tol:
+        return path
+    return np.vstack([root_xy, path])
+
+
 def overlay(img_bgr, path):
     out = img_bgr.copy()
     pts = path.astype(np.int32)
@@ -170,12 +216,13 @@ if __name__ == "__main__":
     mask    = segment(gray)
     root_xy = pick_root_click(img, config.WIN_W, config.WIN_H)
 
-    edge = bottom_edge_path(mask)                         # trace the ventral margin
+    edge = centerline_path(mask)                          # trace through the middle of the shell
     edge = despike(edge)                                  # drop mid-body breaks/debris
     edge = trim_near(edge, root_xy)                      # stop at the clicked root, not past it
     edge = relax_near_root(edge, root_xy, gray)           # bow across the break, not around it
-    path = smooth(edge)
+    path = smooth(edge, sigma=config.CENTERLINE_SMOOTH_SIGMA)
     path = orient_root_first(path, root_xy)
+    path = anchor_to_root(path, root_xy)          # line must start exactly at the clicked root
 
     output_path = os.path.join(config.INTERMEDIATE_DIR, "labeled.png")
     cv2.imwrite(output_path, overlay(img, path))

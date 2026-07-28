@@ -54,13 +54,6 @@ Pipeline, in order (see `__main__` in `02_draw_lines.py`):
    line with root (red) and tail (green) markers, save to
    `config.INTERMEDIATE_DIR`.
 
-Ring detection itself has been removed from this file entirely — it now
-only produces the traced line, per an earlier scope decision.
-
-Validated by hand against 15 images total (5 + 10, run via scratch driver
-scripts, not part of the committed pipeline) by visual inspection of each
-result, not automated metrics.
-
 ## Limitations
 
 - **Segmentation fails when the shell's mask merges with another bright
