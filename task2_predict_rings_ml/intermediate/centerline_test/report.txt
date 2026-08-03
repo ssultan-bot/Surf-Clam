@@ -1,0 +1,35 @@
+Centerline vs. bottom-edge trace test — 10 images
+==========================================================================================
+OK   Surf_Clam_198604_Summer_23_1     shape=(1199, 4166)
+       bottom_edge: length=  3068.5px  root_gap=   0.0px
+       centerline:  length=  2966.2px  root_gap=   0.0px
+OK   Surf_Clam_198604_Summer_29_29    shape=(1197, 2877)
+       bottom_edge: length=  2641.8px  root_gap=   0.0px
+       centerline:  length=  2664.3px  root_gap=   0.0px
+OK   Surf_Clam_198604_Summer_30_15    shape=(1189, 2887)
+       bottom_edge: length=  3524.8px  root_gap=   0.0px
+       centerline:  length=  3392.1px  root_gap=   0.0px
+OK   Surf_Clam_198604_Summer_31_10    shape=(1151, 4221)
+       bottom_edge: length=  2772.9px  root_gap=   0.0px
+       centerline:  length=  2646.7px  root_gap=   0.0px
+OK   Surf_Clam_198604_Summer_31_22    shape=(1200, 2885)
+       bottom_edge: length=  2373.6px  root_gap=   0.0px
+       centerline:  length=  2121.7px  root_gap=   0.0px
+OK   Surf_Clam_198604_Summer_37_22    shape=(1198, 2880)
+       bottom_edge: length=  2468.3px  root_gap=   0.0px
+       centerline:  length=  2222.2px  root_gap=   0.0px
+OK   Surf_Clam_198604_Summer_6_3      shape=(1198, 4133)
+       bottom_edge: length=  3947.9px  root_gap=   0.0px
+       centerline:  length=  3810.0px  root_gap=   0.0px
+OK   Surf_Clam_1986_Summer_255_2      shape=(1171, 4169)
+       bottom_edge: length=  2838.0px  root_gap=   0.0px
+       centerline:  length=  2670.8px  root_gap=   0.0px
+OK   Surf_Clam_201160_Summer_42_1     shape=(2158, 4159)
+       bottom_edge: length=  4372.0px  root_gap=   0.0px
+       centerline:  length=  4231.5px  root_gap=   0.0px
+OK   Surf_Clam_201160_Summer_43_1     shape=(1192, 4182)
+       bottom_edge: length=  4127.6px  root_gap=   0.0px
+       centerline:  length=  3915.5px  root_gap=   0.0px
+==========================================================================================
+10/10 images processed without error
+root_gap_px = distance between the hand-picked hinge point and where the traced line actually starts (small = line starts at the root).

@@ -1,0 +1,155 @@
+66 train / 11 val images
+device: cpu
+foreground fraction 0.0331 -> pos_weight 5.4
+epoch   1/150  train 1.5948  val 1.6861  (saved)
+epoch   2/150  train 1.4792  val 1.6088  (saved)
+epoch   3/150  train 1.4266  val 1.4835  (saved)
+epoch   4/150  train 1.3801  val 1.5468
+epoch   5/150  train 1.3395  val 1.3492  (saved)
+epoch   6/150  train 1.3096  val 1.3906
+epoch   7/150  train 1.2722  val 1.2952  (saved)
+epoch   8/150  train 1.2388  val 1.3124
+epoch   9/150  train 1.2121  val 1.1967  (saved)
+epoch  10/150  train 1.1698  val 1.2369
+epoch  11/150  train 1.1421  val 1.2695
+epoch  12/150  train 1.1219  val 1.2463
+epoch  13/150  train 1.0850  val 1.6303
+epoch  14/150  train 1.0704  val 1.2124
+epoch  15/150  train 1.0370  val 1.1900  (saved)
+epoch  16/150  train 1.0502  val 1.1478  (saved)
+epoch  17/150  train 0.9979  val 1.0391  (saved)
+epoch  18/150  train 0.9479  val 1.2259
+epoch  19/150  train 0.9401  val 1.0136  (saved)
+epoch  20/150  train 0.9335  val 1.1024
+epoch  21/150  train 0.9205  val 1.0378
+epoch  22/150  train 0.8756  val 1.0184
+epoch  23/150  train 0.8559  val 0.9059  (saved)
+epoch  24/150  train 0.8505  val 0.9038  (saved)
+epoch  25/150  train 0.8211  val 1.0095
+epoch  26/150  train 0.7818  val 0.7815  (saved)
+epoch  27/150  train 0.7866  val 1.0135
+epoch  28/150  train 0.7437  val 0.7825
+epoch  29/150  train 0.7852  val 0.7231  (saved)
+epoch  30/150  train 0.7426  val 0.8726
+epoch  31/150  train 0.7119  val 0.9472
+epoch  32/150  train 0.6917  val 0.7922
+epoch  33/150  train 0.6456  val 0.7163  (saved)
+epoch  34/150  train 0.6710  val 0.7840
+epoch  35/150  train 0.6730  val 0.7829
+epoch  36/150  train 0.6248  val 0.7293
+epoch  37/150  train 0.6327  val 0.8211
+epoch  38/150  train 0.6015  val 0.7473
+epoch  39/150  train 0.6062  val 0.9323
+epoch  40/150  train 0.5975  val 0.9317
+epoch  41/150  train 0.6204  val 0.7176
+epoch  42/150  train 0.5956  val 0.7383
+epoch  43/150  train 0.5624  val 0.8420
+epoch  44/150  train 0.5718  val 0.7687
+epoch  45/150  train 0.5351  val 0.9256
+epoch  46/150  train 0.5463  val 0.6633  (saved)
+epoch  47/150  train 0.5154  val 1.0948
+epoch  48/150  train 0.5443  val 0.7973
+epoch  49/150  train 0.5459  val 1.1719
+epoch  50/150  train 0.5348  val 0.6953
+epoch  51/150  train 0.5037  val 0.6997
+epoch  52/150  train 0.5096  val 0.6830
+epoch  53/150  train 0.4907  val 0.8175
+epoch  54/150  train 0.4972  val 0.6750
+epoch  55/150  train 0.5002  val 0.7566
+epoch  56/150  train 0.4821  val 0.6014  (saved)
+epoch  57/150  train 0.4725  val 0.6523
+epoch  58/150  train 0.4555  val 0.6648
+epoch  59/150  train 0.4909  val 0.5487  (saved)
+epoch  60/150  train 0.4801  val 0.6218
+epoch  61/150  train 0.4734  val 0.6621
+epoch  62/150  train 0.4559  val 0.6589
+epoch  63/150  train 0.4480  val 0.5274  (saved)
+epoch  64/150  train 0.5059  val 0.6425
+epoch  65/150  train 0.4393  val 0.6595
+epoch  66/150  train 0.4337  val 0.5637
+epoch  67/150  train 0.4581  val 0.5660
+epoch  68/150  train 0.4039  val 0.6218
+epoch  69/150  train 0.4447  val 0.6044
+epoch  70/150  train 0.4042  val 0.5935
+epoch  71/150  train 0.4130  val 0.5738
+epoch  72/150  train 0.4023  val 0.6808
+epoch  73/150  train 0.3798  val 0.5727
+epoch  74/150  train 0.3811  val 0.6532
+epoch  75/150  train 0.3949  val 1.0281
+epoch  76/150  train 0.3924  val 0.5257  (saved)
+epoch  77/150  train 0.3674  val 0.5577
+epoch  78/150  train 0.3730  val 0.5350
+epoch  79/150  train 0.3970  val 0.5295
+epoch  80/150  train 0.3906  val 0.5586
+epoch  81/150  train 0.3858  val 0.5485
+epoch  82/150  train 0.3760  val 0.6468
+epoch  83/150  train 0.3923  val 0.5489
+epoch  84/150  train 0.3621  val 0.5402
+epoch  85/150  train 0.3298  val 0.5205  (saved)
+epoch  86/150  train 0.3377  val 0.5826
+epoch  87/150  train 0.3230  val 0.5511
+epoch  88/150  train 0.3283  val 0.5277
+epoch  89/150  train 0.3321  val 0.5026  (saved)
+epoch  90/150  train 0.3325  val 0.4728  (saved)
+epoch  91/150  train 0.3223  val 0.5738
+epoch  92/150  train 0.3080  val 0.4912
+epoch  93/150  train 0.3163  val 0.4956
+epoch  94/150  train 0.3136  val 0.5048
+epoch  95/150  train 0.3084  val 0.5282
+epoch  96/150  train 0.3126  val 0.4902
+epoch  97/150  train 0.2972  val 0.4803
+epoch  98/150  train 0.2917  val 0.5141
+epoch  99/150  train 0.2849  val 0.4711  (saved)
+epoch 100/150  train 0.3109  val 0.4671  (saved)
+epoch 101/150  train 0.2832  val 0.4688
+epoch 102/150  train 0.2814  val 0.5182
+epoch 103/150  train 0.2767  val 0.4568  (saved)
+epoch 104/150  train 0.2690  val 0.4336  (saved)
+epoch 105/150  train 0.2704  val 0.4891
+epoch 106/150  train 0.2746  val 0.4997
+epoch 107/150  train 0.2735  val 0.4812
+epoch 108/150  train 0.2798  val 0.4716
+epoch 109/150  train 0.2791  val 0.4574
+epoch 110/150  train 0.2666  val 0.4938
+epoch 111/150  train 0.2688  val 0.4693
+epoch 112/150  train 0.2612  val 0.4679
+epoch 113/150  train 0.2636  val 0.4695
+epoch 114/150  train 0.2725  val 0.4573
+epoch 115/150  train 0.2592  val 0.4549
+epoch 116/150  train 0.2611  val 0.4599
+epoch 117/150  train 0.2560  val 0.4322  (saved)
+epoch 118/150  train 0.2536  val 0.4471
+epoch 119/150  train 0.2601  val 0.4692
+epoch 120/150  train 0.2581  val 0.4594
+epoch 121/150  train 0.2571  val 0.4506
+epoch 122/150  train 0.2528  val 0.4586
+epoch 123/150  train 0.2484  val 0.4330
+epoch 124/150  train 0.2472  val 0.4780
+epoch 125/150  train 0.2513  val 0.4605
+epoch 126/150  train 0.2438  val 0.4745
+epoch 127/150  train 0.2493  val 0.4560
+epoch 128/150  train 0.2505  val 0.4585
+epoch 129/150  train 0.2507  val 0.4607
+epoch 130/150  train 0.2399  val 0.4584
+epoch 131/150  train 0.2494  val 0.4689
+epoch 132/150  train 0.2494  val 0.4655
+epoch 133/150  train 0.2473  val 0.4617
+epoch 134/150  train 0.2436  val 0.4541
+epoch 135/150  train 0.2459  val 0.4632
+epoch 136/150  train 0.2398  val 0.4613
+epoch 137/150  train 0.2425  val 0.4601
+epoch 138/150  train 0.2417  val 0.4633
+epoch 139/150  train 0.2396  val 0.4634
+epoch 140/150  train 0.2485  val 0.4629
+epoch 141/150  train 0.2430  val 0.4629
+epoch 142/150  train 0.2401  val 0.4666
+epoch 143/150  train 0.2355  val 0.4681
+epoch 144/150  train 0.2366  val 0.4700
+epoch 145/150  train 0.2334  val 0.4688
+epoch 146/150  train 0.2377  val 0.4626
+epoch 147/150  train 0.2448  val 0.4649
+epoch 148/150  train 0.2403  val 0.4669
+epoch 149/150  train 0.2437  val 0.4654
+epoch 150/150  train 0.2440  val 0.4659
+
+best val loss 0.4322, checkpoint at /Users/sophia/Desktop/SurfClam/task2_predict_rings_ml/ml/shell_unet.pt

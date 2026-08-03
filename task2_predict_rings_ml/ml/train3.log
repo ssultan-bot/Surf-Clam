@@ -1,0 +1,64 @@
+32 train / 5 val images
+device: cpu
+epoch   1/60  train 1.5987  val 1.6290  (saved)
+epoch   2/60  train 1.4906  val 1.6176  (saved)
+epoch   3/60  train 1.4380  val 1.6841
+epoch   4/60  train 1.4053  val 1.4944  (saved)
+epoch   5/60  train 1.3867  val 1.4627  (saved)
+epoch   6/60  train 1.3677  val 1.3276  (saved)
+epoch   7/60  train 1.3433  val 1.3133  (saved)
+epoch   8/60  train 1.3290  val 1.2904  (saved)
+epoch   9/60  train 1.3070  val 1.2832  (saved)
+epoch  10/60  train 1.2927  val 1.3162
+epoch  11/60  train 1.2720  val 1.2496  (saved)
+epoch  12/60  train 1.2656  val 1.2209  (saved)
+epoch  13/60  train 1.2465  val 1.2342
+epoch  14/60  train 1.2272  val 1.1768  (saved)
+epoch  15/60  train 1.2176  val 1.3174
+epoch  16/60  train 1.2029  val 1.2366
+epoch  17/60  train 1.2022  val 1.2185
+epoch  18/60  train 1.1723  val 1.1747  (saved)
+epoch  19/60  train 1.1625  val 1.1219  (saved)
+epoch  20/60  train 1.1504  val 1.1056  (saved)
+epoch  21/60  train 1.1401  val 1.1278
+epoch  22/60  train 1.1186  val 1.1020  (saved)
+epoch  23/60  train 1.1087  val 1.1417
+epoch  24/60  train 1.0920  val 1.1473
+epoch  25/60  train 1.0811  val 1.1318
+epoch  26/60  train 1.0548  val 1.1544
+epoch  27/60  train 1.0835  val 1.1010  (saved)
+epoch  28/60  train 1.0604  val 1.1105
+epoch  29/60  train 1.0431  val 1.0375  (saved)
+epoch  30/60  train 1.0199  val 1.0223  (saved)
+epoch  31/60  train 1.0005  val 1.1239
+epoch  32/60  train 0.9983  val 1.0143  (saved)
+epoch  33/60  train 0.9865  val 0.9835  (saved)
+epoch  34/60  train 0.9793  val 0.9354  (saved)
+epoch  35/60  train 0.9488  val 0.9285  (saved)
+epoch  36/60  train 0.9204  val 1.0496
+epoch  37/60  train 0.9452  val 0.9612
+epoch  38/60  train 0.8976  val 0.9431
+epoch  39/60  train 0.8770  val 0.9622
+epoch  40/60  train 0.8674  val 0.9289
+epoch  41/60  train 0.8371  val 0.8673  (saved)
+epoch  42/60  train 0.8222  val 0.9296
+epoch  43/60  train 0.8460  val 0.8142  (saved)
+epoch  44/60  train 0.8051  val 0.8636
+epoch  45/60  train 0.7723  val 0.8664
+epoch  46/60  train 0.7551  val 0.9653
+epoch  47/60  train 0.7261  val 0.9200
+epoch  48/60  train 0.7533  val 0.8609
+epoch  49/60  train 0.7282  val 0.8306
+epoch  50/60  train 0.7138  val 0.8788
+epoch  51/60  train 0.6958  val 0.7092  (saved)
+epoch  52/60  train 0.6810  val 0.7001  (saved)
+epoch  53/60  train 0.6464  val 0.6961  (saved)
+epoch  54/60  train 0.6661  val 0.8926
+epoch  55/60  train 0.6301  val 0.7594
+epoch  56/60  train 0.6196  val 0.6336  (saved)
+epoch  57/60  train 0.5936  val 0.7093
+epoch  58/60  train 0.5695  val 0.6666
+epoch  59/60  train 0.6008  val 0.6482
+epoch  60/60  train 0.5718  val 0.6589
+
+best val loss 0.6336, checkpoint at /Users/sophia/Desktop/SurfClam/task2_predict_rings_ml/ml/shell_unet.pt
