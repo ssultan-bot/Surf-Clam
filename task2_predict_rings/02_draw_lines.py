@@ -29,21 +29,6 @@ def bottom_edge_path(mask):
 
 
 def centerline_path(mask, max_thickness_ratio=1.5, median_win=101):
-    """For each column, the midpoint of the growth band.
-
-    Naively bisecting the column's full top-to-bottom span breaks wherever
-    debris or a broken fragment is fused onto the shell in that column: the
-    mask is tall there for reasons that have nothing to do with the growth
-    band, so the true midpoint is nowhere near the band. Clipping the
-    thickness alone isn't enough either, because when material is fused
-    directly onto the ventral side, y_bot itself is contaminated (it's no
-    longer the shell's true edge) -- offsetting up from a wrong anchor just
-    gives a different wrong answer. So instead: flag any column whose raw
-    thickness balloons past the local (median-filtered) expectation as
-    unreliable, throw its midpoint away entirely, and bridge the gap by
-    interpolating between the nearest columns on either side that weren't
-    flagged -- the same "don't trust it, bridge across it" approach already
-    used for the near-root chip/break case."""
     xs = np.where(mask.any(axis=0))[0]
     y_top = np.empty(len(xs), dtype=float)
     y_bot = np.empty(len(xs), dtype=float)
@@ -227,3 +212,19 @@ if __name__ == "__main__":
     output_path = os.path.join(config.INTERMEDIATE_DIR, "labeled.png")
     cv2.imwrite(output_path, overlay(img, path))
     print(f"saved {output_path}")
+
+    # Save in the format 03_grayscale.py expects: a list of lines, each a
+    # list of (window-pixel) points. 03 converts window pixels back to
+    # original-image pixels via (px * w / WIN_W, py * h / WIN_H); since our
+    # path is already in original-image pixels, apply the inverse of that
+    # conversion here so 03/04/05/06 downstream can stay unchanged.
+    h_img, w_img = img.shape[:2]
+    win_pts = [(x * config.WIN_W / w_img, y * config.WIN_H / h_img) for x, y in path]
+    np.save(config.LINES_FILE, np.array([win_pts], dtype=object), allow_pickle=True)
+    print(f"saved {config.LINES_FILE} ({len(win_pts)} points) -- ready for 03_grayscale.py")
+
+    # 03_grayscale.py also expects BEST_MASK_FILE (normally from
+    # 01_segment_pick.py's FastSAM pass). Save the mask we already computed
+    # so 03-06 can run without needing FastSAM/ultralytics at all.
+    np.save(config.BEST_MASK_FILE, mask)
+    print(f"saved {config.BEST_MASK_FILE} -- 01_segment_pick.py is no longer required")

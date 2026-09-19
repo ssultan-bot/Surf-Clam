@@ -1,4 +1,39 @@
+# Python
 __pycache__/
 *.pyc
 .venv/
+surf/
+
+# OS / editor cruft
+.DS_Store
+._*
+.idea/
+.cache/
+D:\mpl_cache/
+
+# Large model weights / generated debug output (kept locally, not pushed)
+FastSAM-s.pt
+*.pptx
+/automatic_edge_line.png
+/automatic_hinge_curve.png
+/automatic_line.png
+/curvature_trace.png
+/debug_edge_pixels.png
+/debug_mask_overlay.png
+/debug_path_before_overlay.png
+/debug_skeleton_path.png
+/drawn_lines.png
+/labeled.png
+/shell_bottom_outline.png
+/shell_contour.png
+/shell_dark_bottom_mask.png
+/shell_dark_bottom_outline.png
+/shell_dark_mask.png
+/shell_light_mask.png
+/shell_light_outline.png
+/shell_mask.png
+/intermediate/
+
+# Per-pipeline intermediate scratch data
 task2_predict_rings/intermediate/
+task2_predict_rings_ml/intermediate/

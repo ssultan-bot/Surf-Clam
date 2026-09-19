@@ -13,7 +13,7 @@
 
 import cv2          # OpenCV: the library we use to read and show images
 import os           # built-in toolbox for file/folder names
-import config       # our own settings file (config.py) from the same folder
+import config       # our own settings file (config.py) from the same folder3
 
 
 def load_image(path):

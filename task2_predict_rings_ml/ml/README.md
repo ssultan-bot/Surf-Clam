@@ -19,6 +19,28 @@ thin band drawn directly around a human-verified centerline was a strictly
 stronger signal — it tells the model exactly where the line goes, not "the
 general vicinity of a blob that usually contains the line."
 
+## Network architecture
+
+`model.SmallUNet` is a four-level U-Net with a base width of 16 channels.
+It receives a three-channel image and returns one logit per pixel.
+
+- Each encoder block applies two 3x3, padding-1 convolutions; each convolution
+  is followed by batch normalization and ReLU. The encoder widths are 16, 32,
+  64, and 128 channels. A 2x2 max-pooling layer is applied before encoder
+  levels 2--4 and before the bottleneck.
+- The bottleneck uses the same two-convolution block at 256 channels.
+- The decoder upsamples four times using 2x2, stride-2 transposed
+  convolutions. At each level, the upsampled features are concatenated with
+  the output of the matching encoder level, then passed through another
+  two-convolution block. Decoder widths are 128, 64, 32, and 16 channels.
+- A final 1x1 convolution maps the 16-channel output to one channel. The
+  inference code applies a sigmoid to convert logits to per-pixel
+  probabilities.
+
+The training and inference preprocessing letterboxes each image to 512x512
+pixels while preserving its aspect ratio. This input size is a preprocessing
+choice, rather than a requirement of the network architecture.
+
 ## Pipeline
 
 ```
